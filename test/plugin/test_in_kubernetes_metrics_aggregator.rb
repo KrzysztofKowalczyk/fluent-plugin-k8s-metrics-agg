@@ -21,7 +21,7 @@ class KubernetesMetricsAggInputTest < Test::Unit::TestCase
       kubernetes_url https://node.fakedestination.com
       kubelet_port 10255
       tag test.tag.check
-      interval 15s
+      interval 2m
       insecure_ssl true
       cluster_name awesome_cluster
   ]).freeze
