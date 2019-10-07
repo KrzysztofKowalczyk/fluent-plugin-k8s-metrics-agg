@@ -137,6 +137,7 @@ module PluginTestHelper
              }
            )
            .to_timeout
+           .to_timeout
            .then
            .to_return(status: 200,
                       body: File.open(File.expand_path('../node3.json', __FILE__)),
