@@ -462,6 +462,9 @@ module Fluent
       def scrape_node_metrics
         response = node_api.get(@client.headers)
         handle_node_response(response)
+      rescue StandardError => e
+        log.error "Failed to scrape metrics, error=#{$ERROR_INFO}, #{e.inspect}"
+        log.error_backtrace
       end
 
       # This method is used to handle responses from the kubeapiserver api
